@@ -1,10 +1,9 @@
 <template>
-    <div>
-        <h1>Meu Calendário</h1>
-        <p>Frontend Vue funcionando! 🎉</p>
-    </div>
+    <AppLayout>
+        <p>Calendário aqui em breve!</p>
+    </AppLayout>
 </template>
 
 <script setup>
-//
+import AppLayout from '../Layouts/AppLayout.vue'
 </script>
