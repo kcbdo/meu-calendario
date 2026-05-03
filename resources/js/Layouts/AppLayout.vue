@@ -10,7 +10,6 @@
                 </button>
             </div>
         </nav>
-
         <main class="main-content">
             <slot />
         </main>
@@ -18,13 +17,8 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { useTheme } from '../composables/useTheme'
 import '../styles/layout.css'
 
-const isDark = ref(false)
-
-const toggleTheme = () => {
-    isDark.value = !isDark.value
-    document.body.classList.toggle('dark', isDark.value)
-}
+const { isDark, toggleTheme } = useTheme()
 </script>

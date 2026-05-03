@@ -1,32 +1,185 @@
 .calendar-container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 24px;
-    font-family: sans-serif;
+    padding: 32px;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 .calendar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
 }
 
 .calendar-header h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    font-weight: 700;
     color: #1e293b;
+    letter-spacing: -0.5px;
 }
 
 .btn-new-event {
-    background: #3B82F6;
+    background: linear-gradient(135deg, #3B82F6, #6366f1);
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
+    padding: 12px 24px;
+    border-radius: 12px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+    transition: all 0.2s;
 }
 
 .btn-new-event:hover {
-    background: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+}
+
+.btn-new-event:active {
+    transform: translateY(0);
+}
+
+/* Card do calendário */
+.calendar-container .fc {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    padding: 24px;
+    border: 1px solid #f1f5f9;
+}
+
+/* Botões de navegação */
+.calendar-container .fc .fc-button {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #475569;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 6px 14px;
+    transition: all 0.2s;
+    box-shadow: none;
+}
+
+.calendar-container .fc .fc-button:hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+    color: #1e293b;
+}
+
+.calendar-container .fc .fc-button-active {
+    background: linear-gradient(135deg, #3B82F6, #6366f1);
+    border-color: transparent;
+    color: white;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+}
+
+/* Título do mês */
+.calendar-container .fc .fc-toolbar-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1e293b;
+    letter-spacing: -0.3px;
+}
+
+/* Cabeçalho dos dias */
+.calendar-container .fc thead th {
+    padding: 12px 0;
+    font-size: 0.78rem;
+    color: #94a3b8;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    border: none;
+}
+
+/* Células dos dias */
+.calendar-container .fc .fc-daygrid-day:hover {
+    background: #f8faff;
+    cursor: pointer;
+}
+
+.calendar-container .fc .fc-daygrid-day-number {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 500;
+    padding: 8px;
+}
+
+/* Dia de hoje */
+.calendar-container .fc .fc-day-today {
+    background: linear-gradient(180deg, #eff6ff 0%, #f8faff 100%);
+}
+
+/* Eventos */
+.calendar-container .fc .fc-event {
+    border-radius: 8px;
+    padding: 3px 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.calendar-container .fc .fc-event:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Bordas da grade */
+.calendar-container .fc td,
+.calendar-container .fc th {
+    border-color: #f1f5f9;
+}
+
+/* Tema escuro */
+body.dark .calendar-header h1 {
+    color: #f1f5f9;
+}
+
+body.dark .calendar-container .fc {
+    background: #1e293b;
+    border-color: #334155;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+body.dark .calendar-container .fc .fc-toolbar-title {
+    color: #f1f5f9;
+}
+
+body.dark .calendar-container .fc .fc-button {
+    background: #334155;
+    border-color: #475569;
+    color: #cbd5e1;
+}
+
+body.dark .calendar-container .fc .fc-button:hover {
+    background: #475569;
+    color: #f1f5f9;
+}
+
+body.dark .calendar-container .fc .fc-daygrid-day-number {
+    color: #94a3b8;
+}
+
+body.dark .calendar-container .fc .fc-day-today {
+    background: linear-gradient(180deg, #1e3a5f 0%, #1e293b 100%);
+}
+
+body.dark .calendar-container .fc thead th {
+    color: #64748b;
+}
+
+body.dark .calendar-container .fc td,
+body.dark .calendar-container .fc th {
+    border-color: #334155;
+}
+
+body.dark .calendar-container .fc .fc-daygrid-day:hover {
+    background: #263548;
 }
